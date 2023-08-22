@@ -37,31 +37,35 @@ The code provided in `strassen_matrix_multiplication.cpp` demonstrates the imple
 The repository includes an example in the `main` function of how to use the implemented Strassen algorithm to multiply two matrices. You can modify the input matrices and matrix size in the `main` function to see how the algorithm works with different inputs.
 
 ```cpp
-int size = 2; // Change this to the desired matrix size
+    int size = 4; // Change this to the desired matrix size
 
-// Initialize matrices A and B
-std::vector<std::vector<int>> A = {
-    {1, 2},
-    {3, 4}
-};
+    // Initialize matrices A and B
+    vector<vector<int>> A = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
 
-std::vector<std::vector<int>> B = {
-    {4, 3},
-    {2, 1}
-};
+    vector<vector<int>> B = {
+        {16, 15, 14, 13},
+        {12, 11, 10, 9},
+        {8, 7, 6, 5},
+        {4, 3, 2, 1}
+    };
 
-std::vector<std::vector<int>> C(size, std::vector<int>(size, 0));
+    vector<vector<int>> C(size, vector<int>(size, 0));
 
-strassenMatrixMultiply(A, B, C, size);
+    strassenMatrixMultiply(A, B, C, size);
 
-// Print the result matrix C
-std::cout << "Result matrix C:" << std::endl;
-for (int i = 0; i < size; ++i) {
-    for (int j = 0; j < size; ++j) {
-        std::cout << C[i][j] << "\t";
+    // Print the result matrix C
+    cout << "Result matrix C:" << endl;
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
     }
-    std::cout << std::endl;
-}
 ```
 
 ## Contributions
